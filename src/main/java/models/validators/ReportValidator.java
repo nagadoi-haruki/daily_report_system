@@ -31,6 +31,18 @@ public class ReportValidator {
             errors.add(contentError);
         }
 
+        //出勤時間のチェック
+        String startWorkError = validateStartWork(rv.getStart_work());
+        if (!startWorkError.equals("")) {
+            errors.add(startWorkError);
+        }
+
+        //退勤時間のチェック
+        String finishWorkError = validateFinishWork(rv.getFinish_work());
+        if (!finishWorkError.equals("")) {
+            errors.add(finishWorkError);
+        }
+
         return errors;
     }
 
@@ -61,4 +73,33 @@ public class ReportValidator {
         //入力値がある場合は空文字を返却
         return "";
     }
+
+    /**
+     * 出勤時間に入力値があるかをチェックし、入力値がなければエラーメッセージを返却
+     * @param startWork 出勤時間
+     * @return エラーメッセージ
+     */
+    private static String validateStartWork(String startWork) {
+        if (startWork == null || startWork.equals("")) {
+            return MessageConst.E_NOSTART_WORK.getMessage();
+        }
+
+        //入力値がある場合は空文字を返却
+        return "";
+    }
+
+    /**
+     * 退勤時間に入力値があるかをチェックし、入力値がなければエラーメッセージを返却
+     * @param finishWork 出勤時間
+     * @return エラーメッセージ
+     */
+    private static String validateFinishWork(String finishWork) {
+        if (finishWork == null || finishWork.equals("")) {
+            return MessageConst.E_NOFINISH_WORK.getMessage();
+        }
+
+        //入力値がある場合は空文字を返却
+        return "";
+    }
+
 }

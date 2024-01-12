@@ -83,6 +83,18 @@ public class Report {
     private String content;
 
     /**
+     * 出勤時間
+     */
+    @Column(name = JpaConst.REP_COL_START_WORK, nullable = false)
+    private String start_work;
+
+    /**
+     * 退勤時間
+     */
+    @Column(name = JpaConst.REP_COL_FINISH_WORK, nullable = false)
+    private String finish_work;
+
+    /**
      * 登録日時
      */
     @Column(name = JpaConst.REP_COL_CREATED_AT, nullable = false)

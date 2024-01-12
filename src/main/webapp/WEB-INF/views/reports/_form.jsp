@@ -28,6 +28,15 @@
 <label for="${AttributeConst.REP_CONTENT.getValue()}">内容</label><br />
 <textarea  name="${AttributeConst.REP_CONTENT.getValue()}" id="${AttributeConst.REP_CONTENT.getValue()}" rows="10" cols="50">${report.content}</textarea>
 <br /><br />
+
+<label for="${AttributeConst.REP_START_WORK.getValue()}">出勤時間</label><br />
+<input type="time" name="${AttributeConst.REP_START_WORK.getValue()}" id="${AttributeConst.REP_START_WORK.getValue()}" value="${report.start_work}" />
+<br /><br />
+
+<label for="${AttributeConst.REP_FINISH_WORK.getValue()}">退勤時間</label><br />
+<input type="time" name="${AttributeConst.REP_FINISH_WORK.getValue()}" id="${AttributeConst.REP_FINISH_WORK.getValue()}" value="${report.finish_work}" />
+<br /><br />
+
 <input type="hidden" name="${AttributeConst.REP_ID.getValue()}" value="${report.id}" />
 <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
 <button type="submit">投稿</button>
